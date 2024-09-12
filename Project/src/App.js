@@ -5,6 +5,7 @@ import Login from './pages/auth/Login/Login';
 import Register from './pages/auth/Register/Register';
 import System from './pages/System/System';
 import AllCourses from './pages/System/All-courses/AllCourses';
+import AddCourses from './pages/System/Add-courses/AddCourses';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="system" element={<System />}>
           <Route index element={<AllCourses />} />
           <Route path="courses" element={<AllCourses />} />
+          <Route path="add" element={<AddCourses />} />
         </Route>
       </Routes>
       </BrowserRouter>

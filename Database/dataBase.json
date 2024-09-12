@@ -42,5 +42,79 @@
       "age": "34",
       "password": "34567"
     }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "name": "Html",
+      "type": "Programming",
+      "Instructor": "Osama Elzero",
+      "Hours": 5,
+      "Difficulty": "Easy",
+      "Tools": "VS Code"
+    },
+    {
+      "id": "2",
+      "name": "Css",
+      "type": "Programming",
+      "Instructor": "Osama Elzero",
+      "Hours": 15,
+      "Difficulty": "Normal",
+      "Tools": "VS Code"
+    },
+    {
+      "id": "3",
+      "name": "Photoshop",
+      "type": "Design",
+      "Instructor": "Mohmed Fares",
+      "Hours": 45,
+      "Difficulty": "Normal",
+      "Tools": "Adobe Photoshop"
+    },
+    {
+      "id": "4",
+      "name": "Fullsatck Web Development",
+      "type": "Programming",
+      "Instructor": "Mohmed Elhossiny",
+      "Hours": 120,
+      "Difficulty": "Hard",
+      "Tools": "VS Code"
+    },
+    {
+      "id": "5",
+      "name": "React",
+      "type": "Programming",
+      "Instructor": "Ahmed Hamaza",
+      "Hours": 40,
+      "Difficulty": "Normal",
+      "Tools": "VS Code"
+    },
+    {
+      "id": "9f33",
+      "name": "Github",
+      "type": "Programming",
+      "Instructor": "Mohmed Elhossiny",
+      "Hours": 50,
+      "Difficulty": "Easy",
+      "Tools": "VS Code"
+    },
+    {
+      "id": "c1c9",
+      "name": "Adobe After Effect",
+      "type": "Design",
+      "Instructor": "Mohmed Elhossiny",
+      "Hours": 40,
+      "Difficulty": "Hard",
+      "Tools": "Adobe AfterEffect"
+    },
+    {
+      "id": "6c19",
+      "name": "Javascript",
+      "type": "Programming",
+      "Instructor": "Samira Saad",
+      "Hours": 29,
+      "Difficulty": "Hard",
+      "Tools": "VS Code"
+    }
   ]
 }

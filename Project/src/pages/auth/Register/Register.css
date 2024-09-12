@@ -109,7 +109,7 @@
     rgba(0, 0, 0, 0.12) 0px 3px 6px;
 }
 
-span {
+.register span {
   display: block;
   font-size: 1.25rem;
   line-height: 1.75rem;

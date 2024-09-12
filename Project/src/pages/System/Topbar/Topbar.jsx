@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import StyledButton from '../../../Shared/StyledComponents';
+import Buttons from '../../../Shared/StyledComponents';
 
 const Topbar = () => {
 
@@ -21,13 +21,13 @@ const Topbar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Link to={"courses"} className="nav-link">All Courses</Link>
-            <Nav.Link href="#features">Add Course</Nav.Link>
+            <Link to={"add"} className='nav-link'>Add Course</Link>
             <Nav.Link href="#home">All Users</Nav.Link>
             <Nav.Link href="#features">Add User</Nav.Link>
           </Nav>
           <Nav className="ms-auto">
             <Nav.Link style={{color: '#fff', marginRight: '10px', fontStyle: 'italic', fontWeight: 'bold'}}>{user ? user.name : "Welcome User"}</Nav.Link>
-            {user ? <StyledButton onClick={removeData}><Link to={"/login"} style={{color: '#fff', textDecoration: 'none'}}>Logout</Link></StyledButton> : null}
+            {user ? <Buttons.DeleteButton onClick={removeData}><Link to={"/login"} style={{color: '#fff', textDecoration: 'none'}}>Logout</Link></Buttons.DeleteButton> : null}
           </Nav>
         </Navbar.Collapse>
       </Container>
