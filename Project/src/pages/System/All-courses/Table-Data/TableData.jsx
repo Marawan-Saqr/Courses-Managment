@@ -40,7 +40,7 @@ const TableData = () => {
             {courses.map((course) => {
               // Define style based on difficulty
               const difficultyStyle = (() => {
-                const difficulty = course.Difficulty.toLowerCase();
+                const difficulty = course.difficulty.toLowerCase();
                 if (difficulty.includes('easy')) return { color: 'rgb(36, 169, 67)' };
                 if (difficulty.includes('hard')) return { color: 'rgb(204, 0, 0)' };
                 return { color: '#e0e02d' };
@@ -50,10 +50,10 @@ const TableData = () => {
                 <tr key={course.id}>
                   <td>{course.name}</td>
                   <td>{course.type}</td>
-                  <td>{course.Instructor}</td>
-                  <td>{course.Hours}</td>
-                  <td style={difficultyStyle}>{course.Difficulty}</td>
-                  <td>{course.Tools}</td>
+                  <td>{course.instructor}</td>
+                  <td>{course.hours}</td>
+                  <td style={difficultyStyle}>{course.difficulty}</td>
+                  <td>{course.tools}</td>
                   <td>
                     <Buttons.DetailsButton>Details</Buttons.DetailsButton>
                     <Buttons.UpdateButton style={{ margin: '0px 10px' }}>Update</Buttons.UpdateButton>

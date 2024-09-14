@@ -40,7 +40,7 @@ const DetailsButton = styled.button`
   }
 `;
 
-const PrimarySpan = styled.span `
+const PrimarySpan = styled.span`
   color: rgb(84, 105, 212);
 `
 

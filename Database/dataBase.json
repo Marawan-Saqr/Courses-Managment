@@ -15,7 +15,7 @@
       "password": "Ahmed5200"
     },
     {
-      "id": "2",
+      "id": "3",
       "email": "Heshamsaqr5000@gmail.com",
       "name": "Hesham Saqr",
       "age": 36,
@@ -25,21 +25,21 @@
       "id": "4",
       "email": "yassmina.mohmed@gmail.com",
       "name": "Yassmina Mohmed",
-      "age": "18",
+      "age": 18,
       "password": "Yassmina123"
     },
     {
       "id": "5",
       "email": "Mohab@gmail.com",
       "name": "Mohab",
-      "age": "29",
+      "age": 29,
       "password": "12345"
     },
     {
       "id": "6",
       "email": "EssamHamdy@gmail.com",
       "name": "Essam",
-      "age": "34",
+      "age": 34,
       "password": "34567"
     }
   ],
@@ -48,73 +48,93 @@
       "id": "1",
       "name": "Html",
       "type": "Programming",
-      "Instructor": "Osama Elzero",
-      "Hours": 5,
-      "Difficulty": "Easy",
-      "Tools": "VS Code"
+      "instructor": "Osama Elzero",
+      "hours": 5,
+      "difficulty": "Easy",
+      "tools": "VS Code"
     },
     {
       "id": "2",
       "name": "Css",
       "type": "Programming",
-      "Instructor": "Osama Elzero",
-      "Hours": 15,
-      "Difficulty": "Normal",
-      "Tools": "VS Code"
+      "instructor": "Osama Elzero",
+      "hours": 15,
+      "difficulty": "Normal",
+      "tools": "VS Code"
     },
     {
       "id": "3",
       "name": "Photoshop",
       "type": "Design",
-      "Instructor": "Mohmed Fares",
-      "Hours": 45,
-      "Difficulty": "Normal",
-      "Tools": "Adobe Photoshop"
+      "instructor": "Mohmed Fares",
+      "hours": 45,
+      "difficulty": "Normal",
+      "tools": "Adobe Photoshop"
     },
     {
       "id": "4",
-      "name": "Fullsatck Web Development",
+      "name": "Fullstack Web Development",
       "type": "Programming",
-      "Instructor": "Mohmed Elhossiny",
-      "Hours": 120,
-      "Difficulty": "Hard",
-      "Tools": "VS Code"
+      "instructor": "Mohmed Elhossiny",
+      "hours": 120,
+      "difficulty": "Hard",
+      "tools": "VS Code"
     },
     {
       "id": "5",
       "name": "React",
       "type": "Programming",
-      "Instructor": "Ahmed Hamaza",
-      "Hours": 40,
-      "Difficulty": "Normal",
-      "Tools": "VS Code"
+      "instructor": "Ahmed Hamaza",
+      "hours": 40,
+      "difficulty": "Normal",
+      "tools": "VS Code"
     },
     {
       "id": "9f33",
       "name": "Github",
       "type": "Programming",
-      "Instructor": "Mohmed Elhossiny",
-      "Hours": 50,
-      "Difficulty": "Easy",
-      "Tools": "VS Code"
+      "instructor": "Mohmed Elhossiny",
+      "hours": 50,
+      "difficulty": "Easy",
+      "tools": "VS Code"
     },
     {
       "id": "c1c9",
       "name": "Adobe After Effect",
       "type": "Design",
-      "Instructor": "Mohmed Elhossiny",
-      "Hours": 40,
-      "Difficulty": "Hard",
-      "Tools": "Adobe AfterEffect"
+      "instructor": "Mohmed Elhossiny",
+      "hours": 40,
+      "difficulty": "Hard",
+      "tools": "Adobe AfterEffect"
     },
     {
       "id": "6c19",
       "name": "Javascript",
       "type": "Programming",
-      "Instructor": "Samira Saad",
-      "Hours": 29,
-      "Difficulty": "Hard",
-      "Tools": "VS Code"
+      "instructor": "Samira Saad",
+      "hours": 29,
+      "difficulty": "Hard",
+      "tools": "VS Code"
+    },
+    {
+      "id": "a5d2",
+      "name": "Programming With C++",
+      "type": "Programming",
+      "iInstructor": "Mina Wageh",
+      "hours": 40,
+      "difficulty": "Hard",
+      "tools": "Code Blocks"
+    }
+  ],
+  "difficulty": [
+    { 
+      "level": "Easy Courses"
+    },
+    { 
+      "level": "Normal Courses"
+    },
+    { 
+      "level": "Hard Courses" 
     }
   ]
 }

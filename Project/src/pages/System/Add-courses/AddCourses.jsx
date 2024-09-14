@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 
 const AddCourse = () => {
 
+  // Zod Scheme
   const schema = z.object({
     name: z.string()
       .nonempty({ message: "Course name Is Required" })
@@ -21,16 +22,16 @@ const AddCourse = () => {
       .nonempty({ message: "Course Type Is Required"})
       .min(5, {message: "Course Type must be at least 5 characters long" })
       .max(20, {message: "Course Type must not exceed 20 characters" }),
-    Instructor: z.string()
+    instructor: z.string()
       .nonempty({ message: "Instructor Is Required"})
       .min(5, {message: "Instructor must be at least 5 characters long" })
       .max(20, {message: "Instructor must not exceed 20 characters" }),
-    Hours: z.number()
+    hours: z.number()
       .min(5, {message: "Hours must be at least 5 Hours" })
       .max(300, {message: "Hours must not exceed 300 Hours" }),
-    Difficulty: z.string()
+    difficulty: z.string()
       .nonempty({ message: "Difficulty Is Required"}),
-    Tools: z.string()
+    tools: z.string()
       .nonempty({ message: "Tools Is Required"})
       .min(5, {message: "Tools must be at least 5 characters long" })
       .max(20, {message: "Tools must not exceed 20 characters" }),
@@ -38,9 +39,10 @@ const AddCourse = () => {
   
 
 
-  // Correct mode and useForm import
+  // React Hook Form Destruct & Zod Resolver
   const { register, handleSubmit, formState: { errors }} = useForm({ mode: 'onTouched', resolver: zodResolver(schema)});
 
+  // Post Method
   const navigate = useNavigate();
   const createCourse = handleSubmit(async (data) => {
     await axios.post("http://localhost:3001/courses", data).then(
@@ -87,9 +89,9 @@ const AddCourse = () => {
               {/* Instructor */}
               <Form.Group controlId="formType" className="mt-4 mb-4">
                 <Form.Label>Instructor</Form.Label>
-                <Form.Control type="text" placeholder="Enter course type" {...register('Instructor')} className={errors.Instructor ? "border border-danger" : null} />
-                  {errors.Instructor && (<Form.Text className="text-danger border">
-                  {errors.Instructor.message}
+                <Form.Control type="text" placeholder="Enter course type" {...register('instructor')} className={errors.Instructor ? "border border-danger" : null} />
+                  {errors.instructor && (<Form.Text className="text-danger border">
+                  {errors.instructor.message}
                 </Form.Text>
                 )}
               </Form.Group>
@@ -98,9 +100,9 @@ const AddCourse = () => {
               {/* Hours */}
               <Form.Group controlId="formHours" className="mt-4 mb-4">
                 <Form.Label>Hours</Form.Label>
-                <Form.Control type="number" placeholder="Enter course hours" {...register('Hours', { valueAsNumber: true })} className={errors.Hours ? "border border-danger" : null} />
-                  {errors.Hours && (<Form.Text className="text-danger">
-                  {errors.Hours.message}
+                <Form.Control type="number" placeholder="Enter course hours" {...register('hours', { valueAsNumber: true })} className={errors.Hours ? "border border-danger" : null} />
+                  {errors.hours && (<Form.Text className="text-danger">
+                  {errors.hours.message}
                 </Form.Text>
                 )}
               </Form.Group>
@@ -109,14 +111,14 @@ const AddCourse = () => {
               {/* Difficulty */}
               <Form.Group controlId="formDifficulty" className="mt-4 mb-4">
                 <Form.Label>Difficulty</Form.Label>
-                <Form.Control as="select" {...register('Difficulty')} className={errors.Difficulty ? "border border-danger" : null}>
+                <Form.Control as="select" {...register('Difficulty')} className={errors.difficulty ? "border border-danger" : null}>
                   <option value="">Select Difficulty</option>
                   <option>Easy</option>
                   <option>Normal</option>
                   <option>Hard</option>
                 </Form.Control>
-                  {errors.Difficulty && (<Form.Text className="text-danger">
-                  {errors.Difficulty.message}
+                  {errors.difficulty && (<Form.Text className="text-danger">
+                  {errors.difficulty.message}
                 </Form.Text>
                 )}
               </Form.Group>
@@ -125,9 +127,9 @@ const AddCourse = () => {
               {/* Tools */}
               <Form.Group controlId="formType" className="mt-4 mb-4">
                 <Form.Label>Tools</Form.Label>
-                <Form.Control type="text" placeholder="Enter Tools" {...register('Tools')} className={errors.Tools ? "border border-danger" : null} />
-                  {errors.Tools && (<Form.Text className="text-danger border">
-                  {errors.Tools.message}
+                <Form.Control type="text" placeholder="Enter Tools" {...register('tools')} className={errors.Tools ? "border border-danger" : null} />
+                  {errors.tools && (<Form.Text className="text-danger border">
+                  {errors.tools.message}
                 </Form.Text>
                 )}
               </Form.Group>

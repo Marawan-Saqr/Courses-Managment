@@ -1,9 +1,9 @@
-import TableData from './Table-Data/TableData';
+import {Outlet} from 'react-router-dom';
 
 const AllCourses = () => {
   return (
     <div>
-      <TableData />
+      <Outlet />
     </div>
   )
 }

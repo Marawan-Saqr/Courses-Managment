@@ -1,34 +1,42 @@
-import './App.css';
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Auth from './pages/auth/Auth';
-import Login from './pages/auth/Login/Login';
-import Register from './pages/auth/Register/Register';
-import System from './pages/System/System';
-import AllCourses from './pages/System/All-courses/AllCourses';
-import AddCourses from './pages/System/Add-courses/AddCourses';
+import Auth from "./pages/auth/Auth";
+import Login from "./pages/auth/Login/Login";
+import Register from "./pages/auth/Register/Register";
+import System from "./pages/System/System";
+import AllCourses from "./pages/System/All-courses/AllCourses";
+import AddCourses from "./pages/System/Add-courses/AddCourses";
+import FilterDifficulty from "./pages/System/All-courses/Filter-difficulty/FilterDifficulty";
+import TableData from "./pages/System/All-courses/Table-Data/TableData";
+import GetByLevel from "./pages/System/All-courses/Filter-difficulty/Get-by-level/GetByLevel";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-      <Routes>
-        {/* Auth Component */}
-        <Route path="/" element={<Auth />}>
-          <Route index element={<Login />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-        </Route>
+        <Routes>
+          {/* Auth Component */}
+          <Route path="/" element={<Auth />}>
+            <Route index element={<Login />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+          </Route>
 
-        {/* System Components */}
-        <Route path="system" element={<System />}>
-          <Route index element={<AllCourses />} />
-          <Route path="courses" element={<AllCourses />} />
-          <Route path="add" element={<AddCourses />} />
-        </Route>
-      </Routes>
+          {/* System Components */}
+          <Route path="system" element={<System />}>
+            <Route index element={<AllCourses />} />
+            <Route path="courses" element={<AllCourses />}>
+              <Route path="table-data" element={<TableData />} />
+              <Route index element={<TableData />} />
+              <Route path="difficult" element={<FilterDifficulty /> } />
+              <Route path="difficult/:level" element={<GetByLevel />} />
+            </Route>
+            <Route path="add" element={<AddCourses />} />
+          </Route>
+        </Routes>
       </BrowserRouter>
     </div>
-  )
+  );
 }
 
 export default App;
