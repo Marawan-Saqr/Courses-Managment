@@ -26,10 +26,11 @@ function App() {
           <Route path="system" element={<System />}>
             <Route index element={<AllCourses />} />
             <Route path="courses" element={<AllCourses />}>
-              <Route path="table-data" element={<TableData />} />
               <Route index element={<TableData />} />
-              <Route path="difficult" element={<FilterDifficulty /> } />
-              <Route path="difficult/:level" element={<GetByLevel />} />
+              <Route path="table-data" element={<TableData />} />
+              <Route path="difficult" element={<FilterDifficulty />}>
+                <Route path=":level" element={<GetByLevel />} />
+              </Route>
             </Route>
             <Route path="add" element={<AddCourses />} />
           </Route>

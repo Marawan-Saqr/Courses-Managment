@@ -8,7 +8,7 @@ const FilterDifficulty = () => {
 
   const [diffcultys, setDiffcultys] = useState([]);
   const getAllDifficulties = async () => {
-    await axios.get("http://localhost:3001/difficulty").then((response) => setDiffcultys(response.data));
+    await axios.get("http://localhost:3001/diff").then((response) => setDiffcultys(response.data));
   }
 
   useEffect(() => {

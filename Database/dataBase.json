@@ -126,15 +126,18 @@
       "tools": "Code Blocks"
     }
   ],
-  "difficulty": [
-    { 
-      "level": "Easy Courses"
+  "diff": [
+    {
+      "id": 1,
+      "level": "easy"
     },
-    { 
-      "level": "Normal Courses"
+    {
+      "id": 2,
+      "level": "normal"
     },
-    { 
-      "level": "Hard Courses" 
+    {
+      "id": 3,
+      "level": "hard"
     }
   ]
 }

@@ -3,38 +3,44 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const GetByLevel = () => {
-  const params = useParams();
-  console.log(params);
+  const { level } = useParams();
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/courses/${params.level}`);
-        setCourses(response.data);
+        // Fetch all courses
+        const response = await axios.get("http://localhost:3001/courses");
+        // Filter courses based on difficulty
+        const filteredCourses = response.data.filter((course) => course.difficulty.toLowerCase() === level.toLowerCase());
+        setCourses(filteredCourses);
       } catch (error) {
         console.error("Error fetching courses:", error);
       }
     };
 
     fetchCourses();
-  }, [params.level]);
+  }, [level]);
 
   return (
     <div>
       <section className="course-data">
-        <h3>Course Details</h3>
+        <h3>Course Details - {level.charAt(0).toUpperCase() + level.slice(1)} Difficulty</h3>
         <ul>
-          {courses.map((course) => (
-            <li key={course.id}>
-              <div>Course Name: {course.name}</div>
-              <div>Course Type: {course.type}</div>
-              <div>Instructor: {course.instructor}</div>
-              <div>Hours: {course.hours}</div>
-              <div>Difficulty: {course.difficulty}</div>
-              <div>Tools: {course.tools}</div>
-            </li>
-          ))}
+          {courses.length > 0 ? (
+            courses.map((course) => (
+              <li key={course.id}>
+                <div>Course Name: {course.name}</div>
+                <div>Course Type: {course.type}</div>
+                <div>Instructor: {course.instructor}</div>
+                <div>Hours: {course.hours}</div>
+                <div>Difficulty: {course.difficulty}</div>
+                <div>Tools: {course.tools}</div>
+              </li>
+            ))
+          ) : (
+            <li>No courses found for this difficulty level</li>
+          )}
         </ul>
       </section>
     </div>

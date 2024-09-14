@@ -16,7 +16,7 @@ const Topbar = () => {
   return (
     <Navbar style={{backgroundColor: 'rgb(84, 105, 212)'}} bg="rgb(84, 105, 212)" data-bs-theme="dark" expand="lg">
       <Container>
-        <Link to={"courses"} className='navbar-brand'>Courses Management</Link>
+        <Link to={"/system"} className='navbar-brand'>Courses Management</Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
