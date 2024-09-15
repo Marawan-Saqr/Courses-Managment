@@ -2,6 +2,7 @@ import "./TableData.css";
 import Buttons from '../../../../Shared/Styled-components/StyledComponents';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const TableData = () => {
 
@@ -55,7 +56,9 @@ const TableData = () => {
                   <td style={difficultyStyle}>{course.difficulty}</td>
                   <td>{course.tools}</td>
                   <td>
-                    <Buttons.DetailsButton>Details</Buttons.DetailsButton>
+                    <Buttons.DetailsButton>
+                      <Link style={{color: 'black', textDecoration: 'none'}} to={`/system/courses/${course.id}`}>Details</Link>
+                    </Buttons.DetailsButton>
                     <Buttons.UpdateButton style={{ margin: '0px 10px' }}>Update</Buttons.UpdateButton>
                     <Buttons.DeleteButton>Delete</Buttons.DeleteButton>
                   </td>
@@ -67,6 +70,6 @@ const TableData = () => {
       </div>
     </div>
   );
-};
+}
 
 export default TableData;

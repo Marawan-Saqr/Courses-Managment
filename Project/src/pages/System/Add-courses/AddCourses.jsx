@@ -111,11 +111,11 @@ const AddCourse = () => {
               {/* Difficulty */}
               <Form.Group controlId="formDifficulty" className="mt-4 mb-4">
                 <Form.Label>Difficulty</Form.Label>
-                <Form.Control as="select" {...register('Difficulty')} className={errors.difficulty ? "border border-danger" : null}>
+                <Form.Control as="select" {...register('difficulty')} className={errors.difficulty ? "border border-danger" : null}>
                   <option value="">Select Difficulty</option>
-                  <option>Easy</option>
-                  <option>Normal</option>
-                  <option>Hard</option>
+                  <option value="Easy">Easy</option>
+                  <option value="Normal">Normal</option>
+                  <option value="Hard">Hard</option>
                 </Form.Control>
                   {errors.difficulty && (<Form.Text className="text-danger">
                   {errors.difficulty.message}

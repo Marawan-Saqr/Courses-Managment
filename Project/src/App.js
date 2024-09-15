@@ -10,6 +10,7 @@ import FilterDifficulty from "./pages/System/All-courses/Filter-difficulty/Filte
 import TableData from "./pages/System/All-courses/Table-Data/TableData";
 import GetByLevel from "./pages/System/All-courses/Filter-difficulty/Get-by-level/GetByLevel";
 import NotFound from './Shared/Not-found/NotFound';
+import CourseDetails from './pages/System/All-courses/Course-details/CourseDetails';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="system" element={<System />}>
             <Route index element={<AllCourses />} />
             <Route path="courses" element={<AllCourses />}>
+              <Route path=":CourseID" element={<CourseDetails />} />
               <Route index element={<TableData />} />
               <Route path="table-data" element={<TableData />} />
               <Route path="difficult" element={<FilterDifficulty />}>

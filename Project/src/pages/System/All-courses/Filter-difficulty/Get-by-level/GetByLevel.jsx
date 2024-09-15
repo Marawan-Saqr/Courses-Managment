@@ -2,6 +2,8 @@ import "./GetByLevel.css";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Buttons from '../../../../../Shared/Styled-components/StyledComponents';
+import { Link } from 'react-router-dom';
 
 const GetByLevel = () => {
   const { level } = useParams();
@@ -24,13 +26,20 @@ const GetByLevel = () => {
     fetchCourses();
   }, [level]);
 
+  // Function to determine the style based on the level
+  const getDifficultyStyle = (difficulty) => {
+    const difficultyLower = difficulty.toLowerCase();
+    if (difficultyLower.includes('easy')) return { color: 'rgb(36, 169, 67)' };
+    if (difficultyLower.includes('hard')) return { color: 'rgb(204, 0, 0)' };
+    return { color: '#e0e02d' };
+  };
+
   return (
     <div>
       <section className="course-data">
         <div className="container">
-          <h3 className="text-center">
-            Course Details - {level.charAt(0).toUpperCase() + level.slice(1)}{" "}
-            Difficulty
+          <h3 className="text-center" style={getDifficultyStyle(level)}>
+            Course Details - {level.charAt(0).toUpperCase() + level.slice(1)} Difficulty
           </h3>
           <div className="row">
             {courses.length > 0 ? (
@@ -50,10 +59,18 @@ const GetByLevel = () => {
                       <strong>Hours:</strong> {course.hours}
                     </div>
                     <div>
-                      <strong>Difficulty:</strong> {course.difficulty}
+                      <strong>Difficulty:</strong>{" "}
+                      <span style={getDifficultyStyle(course.difficulty)}>
+                        {course.difficulty}
+                      </span>
                     </div>
                     <div>
                       <strong>Tools:</strong> {course.tools}
+                    </div>
+                    <div style={{ textAlign: 'right' }}>
+                      <Buttons.DetailsButton style={{ marginTop: '20px' }}>
+                        <Link style={{color: 'black', textDecoration: 'none'}} to={`/system/courses/${course.id}`}>Details</Link>
+                      </Buttons.DetailsButton>
                     </div>
                   </div>
                 </div>
