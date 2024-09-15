@@ -9,6 +9,7 @@ import AddCourses from "./pages/System/Add-courses/AddCourses";
 import FilterDifficulty from "./pages/System/All-courses/Filter-difficulty/FilterDifficulty";
 import TableData from "./pages/System/All-courses/Table-Data/TableData";
 import GetByLevel from "./pages/System/All-courses/Filter-difficulty/Get-by-level/GetByLevel";
+import NotFound from './Shared/Not-found/NotFound';
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
             </Route>
             <Route path="add" element={<AddCourses />} />
           </Route>
+
+          {/* Not Found */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

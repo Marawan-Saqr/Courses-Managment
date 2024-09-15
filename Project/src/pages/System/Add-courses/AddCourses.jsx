@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Form, Container, Row, Col } from "react-bootstrap";
-import Buttons from '../../../Shared/StyledComponents';
+import Buttons from '../../../Shared/Styled-components/StyledComponents';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";

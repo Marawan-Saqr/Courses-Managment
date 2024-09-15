@@ -9,7 +9,7 @@ const Register = () => {
 
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm({ mode: "onTouched" });
-  const [existingEmailError, setExistingEmailError] = useState(""); // State to track email error
+  const [existingEmailError, setExistingEmailError] = useState("");
 
   // Register Function
   const registerSubmit = handleSubmit(async (data) => {
@@ -28,6 +28,7 @@ const Register = () => {
       <div className="container">
         <div className="login-root">
 
+
           {/* Animated Background */}
           <div className="box-root flex-flex flex-direction--column" style={{ minHeight: "100vh", flexGrow: 1 }}>
             <div className="loginbackground box-background--white padding-top--64">
@@ -44,6 +45,7 @@ const Register = () => {
               </div>
             </div>
 
+
             {/* Project Title */}
             <div className="box-root padding-top--24 flex-flex flex-direction--column" style={{ flexGrow: 1, zIndex: 9 }}>
               <div className="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center" style={{ marginTop: "30px" }}>
@@ -55,6 +57,7 @@ const Register = () => {
                     {/* Register Title */}
                     <span className="padding-bottom--15">Register New Account</span>
                     <form onSubmit={registerSubmit}>
+
 
                       {/* Email */}
                       <div className="field padding-bottom--24">
@@ -75,6 +78,7 @@ const Register = () => {
                         {existingEmailError && (<Form.Text className="text-danger">{existingEmailError}</Form.Text>)}
                       </div>
 
+
                       {/* Name */}
                       <div className="field padding-bottom--24" style={{ marginTop: "20px" }}>
                         <label htmlFor="name">Name</label>
@@ -93,6 +97,7 @@ const Register = () => {
                         <Form.Text className="text-danger">{errors.name?.message}</Form.Text>
                       )}
 
+
                       {/* Age */}
                       <div className="field padding-bottom--24" style={{ marginTop: "20px" }}>
                         <label htmlFor="age">Age</label>
@@ -109,6 +114,7 @@ const Register = () => {
                       {errors.age?.message && (
                         <Form.Text className="text-danger">{errors.age?.message}</Form.Text>
                       )}
+
 
                       {/* Password */}
                       <div className="field padding-bottom--24" style={{ marginTop: "20px" }}>
@@ -128,10 +134,12 @@ const Register = () => {
                         <Form.Text className="text-danger">{errors.password?.message}</Form.Text>
                       )}
 
+
                       {/* Submit */}
                       <div className="field padding-bottom--24" style={{ marginTop: "20px" }}>
                         <input type="submit" value="REGISTER" />
                       </div>
+
 
                       {/* login */}
                       <div className="footer-link padding-top--24">

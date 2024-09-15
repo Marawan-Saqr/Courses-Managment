@@ -1,5 +1,5 @@
 import "./TableData.css";
-import Buttons from '../../../../Shared/StyledComponents';
+import Buttons from '../../../../Shared/Styled-components/StyledComponents';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 

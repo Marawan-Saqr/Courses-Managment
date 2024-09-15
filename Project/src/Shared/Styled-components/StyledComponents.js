@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-// Define a styled component for a button
 const DeleteButton = styled.button`
   border: none;
   padding: 5px 8px;
