@@ -1,9 +1,4 @@
-1-Loader.
-2-Delete
-3-Code Enhanced.
-4-Animations.
-5-Readme.
-6-Enroll Form.
-7-Crud On Students.
-8-Update Part Of Ul In Details.
-9-CRUD On Users.
+1-CRUD On Users.
+2-CRUD On Students.
+3-Media Query.
+4-Readme.

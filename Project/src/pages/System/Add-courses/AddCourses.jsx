@@ -36,7 +36,7 @@ const AddCourse = () => {
       .min(5, {message: "Tools must be at least 5 characters long" })
       .max(20, {message: "Tools must not exceed 20 characters" }),
   });
-  
+
 
 
   // React Hook Form Destruct & Zod Resolver

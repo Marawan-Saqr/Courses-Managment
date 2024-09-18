@@ -50,15 +50,18 @@
       "password": "This Is Osama Elzero"
     }
   ],
+
+
+
   "courses": [
     {
+      "id": "1",
       "name": "HTML New",
       "type": "Programming",
       "instructor": "Islam Kodzila",
       "hours": 8,
       "difficulty": "Easy",
-      "tools": "Brackets",
-      "id": "1"
+      "tools": "Brackets"
     },
     {
       "id": "2",
@@ -67,9 +70,6 @@
       "instructor": "Osama Elzero",
       "hours": 15,
       "difficulty": "Normal",
-      "about": "Learn how to style web pages with CSS, making them visually appealing.",
-      "learn": "Selectors, properties, layouts, responsiveness, animations.",
-      "Syllabus": "1. Introduction to CSS\n2. CSS Selectors and Properties\n3. Box Model and Layouts\n4. Responsive Design\n5. CSS Animations",
       "tools": "VS Code"
     },
     {
@@ -79,9 +79,6 @@
       "instructor": "Mohmed Fares",
       "hours": 45,
       "difficulty": "Normal",
-      "about": "Master Adobe Photoshop for professional-level graphic design and editing.",
-      "learn": "Basic tools, layers, masks, filters, image manipulation.",
-      "Syllabus": "1. Introduction to Photoshop\n2. Basic Tools and Panels\n3. Working with Layers\n4. Filters and Effects\n5. Advanced Image Manipulation",
       "tools": "Adobe Photoshop"
     },
     {
@@ -91,9 +88,6 @@
       "instructor": "Mohmed Elhossiny",
       "hours": 120,
       "difficulty": "Hard",
-      "about": "Learn how to build both the front-end and back-end of web applications.",
-      "learn": "HTML, CSS, JavaScript, React, Node.js, databases, RESTful APIs.",
-      "Syllabus": "1. Front-End Fundamentals (HTML, CSS, JS)\n2. React and Single Page Applications\n3. Backend Development with Node.js\n4. Working with Databases\n5. Deploying Web Applications",
       "tools": "VS Code"
     },
     {
@@ -103,9 +97,6 @@
       "instructor": "Ahmed Hamaza",
       "hours": 40,
       "difficulty": "Normal",
-      "about": "Learn to build interactive UIs using React.",
-      "learn": "JSX, components, state, props, hooks, and routing.",
-      "Syllabus": "1. Introduction to React\n2. JSX and Components\n3. Managing State and Props\n4. React Hooks\n5. React Router for Navigation",
       "tools": "VS Code"
     },
     {
@@ -115,24 +106,12 @@
       "instructor": "Mohmed Elhossiny",
       "hours": 50,
       "difficulty": "Easy",
-      "about": "Learn how to use Git and GitHub for version control.",
-      "learn": "Repositories, commits, branches, pull requests, and collaboration.",
-      "Syllabus": "1. Introduction to Git and GitHub\n2. Setting up Repositories\n3. Commit and Version Control\n4. Branching and Merging\n5. Collaborating on Projects",
-      "tools": "VS Code"
-    },
-    {
-      "id": "8",
-      "name": "Javascript",
-      "type": "Programming",
-      "instructor": "Samira Saad",
-      "hours": 29,
-      "difficulty": "Hard",
-      "about": "Learn JavaScript for web development to create dynamic and interactive websites.",
-      "learn": "Variables, functions, DOM manipulation, event handling, ES6+ features.",
-      "Syllabus": "1. Introduction to JavaScript\n2. Variables and Data Types\n3. Functions and Control Flow\n4. DOM Manipulation\n5. Modern JavaScript (ES6+)",
       "tools": "VS Code"
     }
   ],
+
+
+
   "diff": [
     {
       "id": "1",
