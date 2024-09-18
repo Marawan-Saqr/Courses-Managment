@@ -39,7 +39,7 @@ const CourseDetails = () => {
         </ul>
 
         <h2>Course Syllabus</h2>
-        <ul>
+        <ul style={{listStyleType: 'none'}}>
           {course.Syllabus ? (
             course.Syllabus.split("\n").map((topic, index) => (
               <li key={index}>{topic}</li>
