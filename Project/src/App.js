@@ -4,14 +4,18 @@ import Auth from "./pages/auth/Auth";
 import Login from "./pages/auth/Login/Login";
 import Register from "./pages/auth/Register/Register";
 import System from "./pages/System/System";
-import AllCourses from "./pages/System/All-courses/AllCourses";
-import AddCourses from "./pages/System/Add-courses/AddCourses";
-import FilterDifficulty from "./pages/System/All-courses/Filter-difficulty/FilterDifficulty";
-import TableData from "./pages/System/All-courses/Table-Data/TableData";
-import GetByLevel from "./pages/System/All-courses/Filter-difficulty/Get-by-level/GetByLevel";
+import AllCourses from "./pages/System/courses/AllCourses";
+import AddCourses from "./pages/System/courses/Add-courses/AddCourses";
+import FilterDifficulty from "./pages/System/courses/Filter-difficulty/FilterDifficulty";
+import TableData from "./pages/System/courses/Table-Data/TableData";
+import GetByLevel from "./pages/System/courses/Filter-difficulty/Get-by-level/GetByLevel";
 import NotFound from './Shared/Not-found/NotFound';
-import CourseDetails from './pages/System/All-courses/Course-details/CourseDetails';
-import UpdateCourses from './pages/System/All-courses/Update-courses/UpdateCourses';
+import CourseDetails from './pages/System/courses/Course-details/CourseDetails';
+import UpdateCourses from './pages/System/courses/Update-courses/UpdateCourses';
+import Users from './pages/System/Users/Users';
+import UserDetails from './pages/System/Users/User-details/UserDetails';
+import UpdateUser from './pages/System/Users/Update-user/UpdateUser';
+import TableDataUsers from './pages/System/Users/Table-data-users/TableDataUsers';
 
 function App() {
   return (
@@ -38,6 +42,12 @@ function App() {
               <Route path="update/:COURSEID" element={<UpdateCourses />} />
             </Route>
             <Route path="add" element={<AddCourses />} />
+            <Route path="users" element={<Users />}>
+              <Route index element={<TableDataUsers />} />
+              <Route path="table-data-users" element={<TableDataUsers />} />
+              <Route path="user-details/:USERID" element={<UserDetails />} />
+              <Route path="update-user/:USERID" element={<UpdateUser />} />
+            </Route>
           </Route>
 
           {/* Not Found */}

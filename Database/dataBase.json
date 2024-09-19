@@ -34,25 +34,8 @@
       "name": "Mohab",
       "age": 29,
       "password": "12345"
-    },
-    {
-      "id": "6",
-      "email": "EssamHamdy@gmail.com",
-      "name": "Essam",
-      "age": 34,
-      "password": "34567"
-    },
-    {
-      "id": "cb77",
-      "email": "Osama.Elzero@hotmail.com",
-      "name": "Osama Elzero",
-      "age": 37,
-      "password": "This Is Osama Elzero"
     }
   ],
-
-
-
   "courses": [
     {
       "id": "1",
@@ -107,11 +90,26 @@
       "hours": 50,
       "difficulty": "Easy",
       "tools": "VS Code"
+    },
+    {
+      "id": "658c",
+      "name": "Sass Course",
+      "type": "Programming",
+      "instructor": "Smaira Saad",
+      "hours": 40,
+      "difficulty": "Normal",
+      "tools": "VS Code"
+    },
+    {
+      "id": "a7d0",
+      "name": "Excel Course",
+      "type": "Accountaing",
+      "instructor": "Mohmed Yasser",
+      "hours": 19,
+      "difficulty": "Easy",
+      "tools": "Microsoft Office"
     }
   ],
-
-
-
   "diff": [
     {
       "id": "1",

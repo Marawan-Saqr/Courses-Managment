@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 const Register = () => {
 
+  // Component States
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm({ mode: "onTouched" });
   const [existingEmailError, setExistingEmailError] = useState("");
@@ -23,10 +24,12 @@ const Register = () => {
     }
   });
 
+
+
   return (
-    <section className="Register">
+    <section className="register">
       <div className="container">
-        <div className="login-root">
+        <div className="register-root">
 
 
           {/* Animated Background */}
@@ -49,7 +52,7 @@ const Register = () => {
             {/* Project Title */}
             <div className="box-root padding-top--24 flex-flex flex-direction--column" style={{ flexGrow: 1, zIndex: 9 }}>
               <div className="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center" style={{ marginTop: "30px" }}>
-                <h3><Link to={"/"} style={{ textDecoration: "none" }}>Courses Management</Link></h3>
+                <h3><Link to={"/"} style={{ textDecoration: "none" }}>Welcome To Courses Management</Link></h3>
               </div>
               <div className="formbg-outer">
                 <div className="formbg">
@@ -74,8 +77,11 @@ const Register = () => {
                             },
                           })}
                         />
-                        {errors.email?.message && (<Form.Text style={{display: 'block'}} className="text-danger">{errors.email?.message}</Form.Text>)}
-                        {existingEmailError && (<Form.Text className="text-danger">{existingEmailError}</Form.Text>)}
+                        <div >
+                          {errors.email?.message && (
+                            <Form.Text className="text-danger">{errors.email?.message}</Form.Text>
+                          )}
+                        </div>
                       </div>
 
 
@@ -93,9 +99,11 @@ const Register = () => {
                           })}
                         />
                       </div>
-                      {errors.name?.message && (
-                        <Form.Text className="text-danger">{errors.name?.message}</Form.Text>
-                      )}
+                      <div style={{marginTop: '-9px'}}>
+                        {errors.name?.message && (
+                          <Form.Text className="text-danger">{errors.name?.message}</Form.Text>
+                        )}
+                      </div>
 
 
                       {/* Age */}
@@ -111,9 +119,11 @@ const Register = () => {
                           })}
                         />
                       </div>
-                      {errors.age?.message && (
-                        <Form.Text className="text-danger">{errors.age?.message}</Form.Text>
-                      )}
+                      <div style={{marginTop: '-9px'}}>
+                        {errors.age?.message && (
+                          <Form.Text className="text-danger">{errors.age?.message}</Form.Text>
+                        )}
+                      </div>
 
 
                       {/* Password */}
@@ -130,9 +140,11 @@ const Register = () => {
                           })}
                         />
                       </div>
-                      {errors.password?.message && (
-                        <Form.Text className="text-danger">{errors.password?.message}</Form.Text>
-                      )}
+                      <div style={{marginTop: '-9px'}}>
+                        {errors.password?.message && (
+                          <Form.Text className="text-danger">{errors.password?.message}</Form.Text>
+                        )}
+                      </div>
 
 
                       {/* Submit */}

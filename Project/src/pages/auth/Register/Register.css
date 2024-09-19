@@ -1,4 +1,4 @@
-.login-root {
+.register-root {
   background: #fff;
   display: flex;
   width: 100%;
@@ -251,5 +251,4 @@ a.ssolink {
   100% {
     transform: translateX(0px);
   }
-
 }

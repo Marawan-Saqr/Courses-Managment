@@ -5,8 +5,12 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Loader from '../../../../Shared/Loader/Loader';
+import { useNavigate } from 'react-router-dom';
 
 const TableData = () => {
+
+  const navigate = useNavigate();
+
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -90,8 +94,8 @@ const TableData = () => {
                       <Buttons.DetailsButton>
                         <Link style={{ color: 'black', textDecoration: 'none' }} to={`/system/courses/details/${course.id}`}>Details</Link>
                       </Buttons.DetailsButton>
-                      <Buttons.UpdateButton style={{ margin: '0px 10px' }}>
-                        <Link style={{ color: 'white', textDecoration: 'none' }} to={{ pathname: `/system/courses/update/${course.id}`, state: course }}>Update</Link>
+                      <Buttons.UpdateButton style={{ margin: '0px 10px' }} onClick={() => navigate(`/system/courses/update/${course.id}`, {state: course})}>
+                        <Link style={{ color: 'white', textDecoration: 'none' }} >Update</Link>
                       </Buttons.UpdateButton>
                       <Buttons.DeleteButton>
                         <Link style={{ color: 'white', textDecoration: 'none' }} onClick={() => {handleDelete(course.id)}}>Delete</Link>

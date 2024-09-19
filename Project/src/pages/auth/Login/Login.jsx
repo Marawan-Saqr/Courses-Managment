@@ -5,13 +5,18 @@ import { useForm } from "react-hook-form";
 import Form from "react-bootstrap/Form";
 import axios from 'axios';
 
-
 const Login = () => {
 
+  // Component States
   const [users, setUsers] = useState([]);
   const [message, setMessage] = useState(undefined);
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors }} = useForm({ mode: "onTouched" });
+
+  // Get All Users Function Before Login
+  const getAllUsers = async() => {
+    await axios.get("http://localhost:3001/users").then((response) => setUsers(response.data));
+  }
 
   // Login Function
   const loginSubmit = handleSubmit((data) => {
@@ -23,16 +28,14 @@ const Login = () => {
       localStorage.setItem("user-data", JSON.stringify(selectUser));
     }
   });
-  
-  // Get All Users Function
-  const getAllUsers = async() => {
-    await axios.get("http://localhost:3001/users").then((response) => setUsers(response.data));
-  }
 
+  // useEffect
   useEffect(() => {
     getAllUsers();
   }, [])
 
+
+  // User Interface
   return (
     <section className="login">
       {message && <div style={{position: 'relative', zIndex: '4000'}} className="alert alert-danger">Incorrect Email Or Password</div>}
@@ -80,7 +83,7 @@ const Login = () => {
             {/* Project Title */}
             <div className="box-root padding-top--24 flex-flex flex-direction--column" style={{ flexGrow: 1, zIndex: 9 }}>
               <div className="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center" style={{ marginTop: "30px" }}>
-                <h3><Link to={"/"} style={{ textDecoration: "none" }}>Courses Management</Link></h3>
+                <h3><Link to={"/"} style={{ textDecoration: "none" }}>Welcome To Courses Management</Link></h3>
               </div>
               <div className="formbg-outer">
                 <div className="formbg">
@@ -106,9 +109,11 @@ const Login = () => {
                           })}
                         />
                       </div>
-                      {errors.email?.message && (
-                        <Form.Text className="text-danger">{errors.email?.message}</Form.Text>
-                      )}
+                      <div style={{marginTop: '-9px'}}>
+                        {errors.email?.message && (
+                          <Form.Text className="text-danger">{errors.email?.message}</Form.Text>
+                        )}
+                      </div>
 
 
                       {/* Password */}
@@ -125,9 +130,11 @@ const Login = () => {
                           })}
                         />
                       </div>
-                      {errors.password?.message && (
-                        <Form.Text className="text-danger">{errors.password?.message}</Form.Text>
-                      )}
+                      <div style={{marginTop: '-9px'}}>
+                        {errors.password?.message && (
+                          <Form.Text className="text-danger">{errors.password?.message}</Form.Text>
+                        )}
+                      </div>
 
 
                       {/* Submit */}

@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import './UpdateCourses.css';
+import React from "react";
+import './AddCourses.css';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -7,10 +7,10 @@ import { Form, Container, Row, Col } from "react-bootstrap";
 import Buttons from '../../../../Shared/Styled-components/StyledComponents';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
-const UpdateCourses = () => {
+const AddCourse = () => {
 
   // Zod Scheme
   const schema = z.object({
@@ -38,51 +38,30 @@ const UpdateCourses = () => {
   });
 
 
-  // React Hook Form Destruct & Zod Resolver
-  const { register, handleSubmit, setValue, formState: { errors }} = useForm({ mode: 'onTouched', resolver: zodResolver(schema)});
 
-  // Put Method
-  const { state } = useLocation();
+  // React Hook Form Destruct & Zod Resolver
+  const { register, handleSubmit, formState: { errors }} = useForm({ mode: 'onTouched', resolver: zodResolver(schema)});
+
+  // Post Method
   const navigate = useNavigate();
-  const updateCourse = handleSubmit(async (data) => {
-    try {
-      await axios.put(`http://localhost:3001/courses/${state.COURSEID}`, data);
+  const createCourse = handleSubmit(async (data) => {
+    await axios.post("http://localhost:3001/courses", data).then(
       Swal.fire({
         title: "DONE!",
-        text: "Your Course Has Been Updated!",
+        text: "Your Course Has Been Added!",
         icon: "success"
-      }).then(() => {
-        navigate("/system");
-      });
-    } catch (error) {
-      console.error("Error updating course:", error);
-      Swal.fire({
-        title: "Error!",
-        text: "There was an issue updating the course.",
-        icon: "error"
-      });
-    }
+      }),
+      navigate("/system")
+    )
   });
 
-  useEffect(() => {
-    if (state) {
-      setValue("name", state.name);
-      setValue("type", state.type);
-      setValue("instructor", state.instructor);
-      setValue("hours", state.hours);
-      setValue("difficulty", state.difficulty);
-      setValue("tools", state.tools);
-    }
-  }, [state])
-
-
   return (
-    <section className="update-courses mb-5">
+    <section className="add-courses mb-5">
       <Container className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
         <Row className="w-100">
           <Col xs={12} md={8} lg={12} className="mx-auto">
-            <h2 className="text-center mb-4">Update <Buttons.PrimarySpan>Courses</Buttons.PrimarySpan></h2>
-            <Form onSubmit={handleSubmit(updateCourse)}>
+            <h2 className="text-center mb-4">ADD <Buttons.PrimarySpan>COURSES</Buttons.PrimarySpan></h2>
+            <Form onSubmit={handleSubmit(createCourse)}>
 
 
               {/* Course Name */}
@@ -164,4 +143,4 @@ const UpdateCourses = () => {
   );
 };
 
-export default UpdateCourses;
+export default AddCourse;

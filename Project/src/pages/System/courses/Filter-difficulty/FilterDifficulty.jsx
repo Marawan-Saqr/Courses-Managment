@@ -25,7 +25,7 @@ const FilterDifficulty = () => {
   return (
     <div className='difficult-dashboard'>
       <div className="container">
-      <h4>Select Courses Difficulties</h4>
+      <h4>SELECT COURSES DIFFICULTIES</h4>
       </div>
       <div className="row justify-content-between">
         <div className='col-md-4'>

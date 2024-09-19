@@ -9,9 +9,8 @@ import Loader from '../../../../../Shared/Loader/Loader';
 const GetByLevel = () => {
   const { level } = useParams();
   const [courses, setCourses] = useState([]);
-  const [loading, setLoading] = useState(true); // Initially loading is true
+  const [loading, setLoading] = useState(true);
 
-  // Fetch courses based on difficulty level
   const fetchCourses = async () => {
     try {
       const response = await axios.get("http://localhost:3001/courses");
@@ -47,7 +46,7 @@ const GetByLevel = () => {
         <section className="course-data">
           <div className="container">
             <h3 className="text-center" style={getDifficultyStyle(level)}>
-              Course Details - {level.charAt(0).toUpperCase() + level.slice(1)} Difficulty
+              COURSE DETAILS - {level.toUpperCase()} DIFFICULTY
             </h3>
             <div className="row">
               {courses.length > 0 ? (
