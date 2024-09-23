@@ -16,6 +16,9 @@ import Users from './pages/System/Users/Users';
 import UserDetails from './pages/System/Users/User-details/UserDetails';
 import UpdateUser from './pages/System/Users/Update-user/UpdateUser';
 import TableDataUsers from './pages/System/Users/Table-data-users/TableDataUsers';
+import CreateUser from './pages/System/Users/Create-user/CreateUser';
+import Students from './pages/System/Students/Students';
+import TableDataStudents from './pages/System/Students/Table-data-students/TableDataStudents';
 
 function App() {
   return (
@@ -47,6 +50,11 @@ function App() {
               <Route path="table-data-users" element={<TableDataUsers />} />
               <Route path="user-details/:USERID" element={<UserDetails />} />
               <Route path="update-user/:USERID" element={<UpdateUser />} />
+              <Route path="add-user" element={<CreateUser />} />
+            </Route>
+            <Route path="students" element={<Students />}>
+              <Route index element ={<TableDataStudents />} />
+              <Route path="table-data-students" element ={<TableDataStudents />} />
             </Route>
           </Route>
 

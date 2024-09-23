@@ -1,4 +1,4 @@
-1-CRUD On Users.
-2-CRUD On Students.
+1-CRUD On Students (update, create, delete).
+2-query param on course => students.
 3-Media Query.
 4-Readme.

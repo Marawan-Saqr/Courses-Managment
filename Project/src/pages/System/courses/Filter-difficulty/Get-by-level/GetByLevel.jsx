@@ -76,7 +76,7 @@ const GetByLevel = () => {
                       </div>
                       <div style={{ textAlign: 'right' }}>
                         <Buttons.DetailsButton style={{ marginTop: '20px' }}>
-                          <Link style={{color: 'black', textDecoration: 'none'}} to={`/system/courses/${course.id}`}>Details</Link>
+                          <Link style={{color: 'black', textDecoration: 'none'}} to={`/system/courses/details/${course.id}`}>Details</Link>
                         </Buttons.DetailsButton>
                       </div>
                     </div>

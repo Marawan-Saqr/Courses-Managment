@@ -34,6 +34,20 @@
       "name": "Mohab",
       "age": 29,
       "password": "12345"
+    },
+    {
+      "id": "44ad",
+      "name": "Ismail Mohmed",
+      "email": "ismail_Mohmed@yahoo.com",
+      "age": 44,
+      "password": "6437282"
+    },
+    {
+      "id": "50f7",
+      "name": "Safy Essam Mohmed",
+      "email": "safy@yahoo.com",
+      "age": 22,
+      "password": "1234567"
     }
   ],
   "courses": [
@@ -108,6 +122,15 @@
       "hours": 19,
       "difficulty": "Easy",
       "tools": "Microsoft Office"
+    },
+    {
+      "id": "3748",
+      "name": "Davinci Resolve",
+      "type": "Design",
+      "instructor": "Mohmed Yasser",
+      "hours": 40,
+      "difficulty": "Normal",
+      "tools": "Davinci Resolve"
     }
   ],
   "diff": [
@@ -122,6 +145,32 @@
     {
       "id": "3",
       "level": "hard"
+    }
+  ],
+  "students": [
+    {
+      "id": "1",
+      "name": "Haidy Essam",
+      "email": "haidy@gmail.com",
+      "gender": "female",
+      "age": 22,
+      "course": "HTML New"
+    },
+    {
+      "id": "2",
+      "name": "Mahmoud Ahmed",
+      "email": "mah_ahmed@gmail.com",
+      "gender": "male",
+      "age": 27,
+      "course": "Photoshop"
+    },
+    {
+      "id": "4",
+      "name": "Touqa Mohmed",
+      "email": "Touqa@gmail.com",
+      "gender": "female",
+      "age": 17,
+      "course": "Excel Course"
     }
   ]
 }

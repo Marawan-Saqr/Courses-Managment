@@ -28,7 +28,14 @@ const Topbar = () => {
               <NavLink to={"courses/difficult"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Filter Courses By Difficulty</NavLink>
               <NavLink to={"add"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Add Course</NavLink>
             </NavDropdown>
-            <NavLink to={"/system/users/table-data-users"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Users</NavLink>
+            <NavDropdown title="Users">
+              <NavLink to={"/system/users/table-data-users"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>All Users</NavLink>
+              <NavLink to={"/system/users/add-user"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Create User</NavLink>
+            </NavDropdown>
+            <NavDropdown title="Students">
+              <NavLink to={"/system/students/table-data-students"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>All Students</NavLink>
+              
+            </NavDropdown>
           </Nav>
           <Nav className="ms-auto">
             <Nav.Link style={{color: '#fff', marginRight: '10px', fontStyle: 'italic', fontWeight: 'bold'}}>{user ? user.name : "Welcome User"}</Nav.Link>
