@@ -44,13 +44,13 @@ const UpdateUser = () => {
   const navigate = useNavigate();
   const updateUser = handleSubmit(async (data) => {
     try {
-      await axios.put(`http://localhost:3001/users/${state.USERID}`, data);
+      await axios.put(`http://localhost:3001/users/${state.id}`, data);
       Swal.fire({
         title: "DONE!",
         text: "User has been updated!",
         icon: "success",
       }).then(() => {
-        navigate("/users"); // Adjust the navigation path as needed
+        navigate("/system/users"); // Adjust the navigation path as needed
       });
     } catch (error) {
       console.error("Error updating user:", error);

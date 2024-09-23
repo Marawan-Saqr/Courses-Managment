@@ -18,7 +18,7 @@ const FilterDifficulty = () => {
 
   // Easy Courses Difficulty By Default
   const location = useLocation();
-  if (location.pathname === '/system/courses/difficult') {
+  if (location.pathname === '/system/filter/filter-by-difficulty') {
     return <Navigate to="easy" />;
   }
 

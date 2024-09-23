@@ -80,9 +80,9 @@ const TableDataStudents = () => {
                   <td>{student.course}</td>
                   <td>
                     <Buttons.DetailsButton>
-                      <Link style={{color: 'black', textDecoration: 'none'}} to={`/system/users/user-details/${student.id}`}>Details</Link>
+                      <Link style={{color: 'black', textDecoration: 'none'}} to={`/system/students/student-details/${student.id}`}>Details</Link>
                     </Buttons.DetailsButton>
-                    <Buttons.UpdateButton style={{ margin: '0px 10px' }} onClick={() => navigate(`/system/users/update-user/${student.id}`, {state: student})}>
+                    <Buttons.UpdateButton style={{ margin: '0px 10px' }} onClick={() => navigate(`/system/students/update-student/${student.id}`, { state: student })}>
                       <Link style={{ color: 'white', textDecoration: 'none' }} >Update</Link>
                     </Buttons.UpdateButton>
                     <Buttons.DeleteButton>

@@ -60,7 +60,7 @@ const AddCourse = () => {
       <Container className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
         <Row className="w-100">
           <Col xs={12} md={8} lg={12} className="mx-auto">
-            <h2 className="text-center mb-4">ADD <Buttons.PrimarySpan>COURSES</Buttons.PrimarySpan></h2>
+            <h2 className="text-center mb-4">ADD <Buttons.PrimarySpan>COURSE</Buttons.PrimarySpan></h2>
             <Form onSubmit={handleSubmit(createCourse)}>
 
 

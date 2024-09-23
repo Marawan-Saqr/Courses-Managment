@@ -25,16 +25,19 @@ const Topbar = () => {
           <Nav className="me-auto">
             <NavDropdown title="Courses" id="basic-nav-dropdown">
               <NavLink to={"courses/table-data"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>All Courses</NavLink>
-              <NavLink to={"courses/difficult"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Filter Courses By Difficulty</NavLink>
-              <NavLink to={"add"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Add Course</NavLink>
+              <NavLink to={"courses/add-course"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Add Course</NavLink>
             </NavDropdown>
             <NavDropdown title="Users">
               <NavLink to={"/system/users/table-data-users"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>All Users</NavLink>
-              <NavLink to={"/system/users/add-user"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Create User</NavLink>
+              <NavLink to={"/system/users/create-user"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Create User</NavLink>
             </NavDropdown>
             <NavDropdown title="Students">
               <NavLink to={"/system/students/table-data-students"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>All Students</NavLink>
-              
+              <NavLink to={"/system/students/create-student"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Create Student</NavLink>
+            </NavDropdown>
+            <NavDropdown title="Filter">
+              <NavLink to={"/system/filter/filter-by-difficulty"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Filter Courses By Difficulty</NavLink>
+              <NavLink to={"/system/filter/enrolled-students"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Filter Enrolled Courses</NavLink>
             </NavDropdown>
           </Nav>
           <Nav className="ms-auto">

@@ -1,11 +1,11 @@
 {
   "users": [
     {
-      "id": "1",
-      "email": "Marawansaqr5000@gmail.com",
       "name": "Marawan Saqr",
+      "email": "Marawansaqr5002@gmail.com",
       "age": 27,
-      "password": "Marawan5200"
+      "password": "Marawan5200",
+      "id": "1"
     },
     {
       "id": "2",
@@ -52,13 +52,13 @@
   ],
   "courses": [
     {
-      "id": "1",
-      "name": "HTML New",
+      "name": "HTML New Level 2",
       "type": "Programming",
       "instructor": "Islam Kodzila",
       "hours": 8,
       "difficulty": "Easy",
-      "tools": "Brackets"
+      "tools": "Brackets",
+      "id": "1"
     },
     {
       "id": "2",
@@ -149,12 +149,12 @@
   ],
   "students": [
     {
-      "id": "1",
       "name": "Haidy Essam",
       "email": "haidy@gmail.com",
-      "gender": "female",
       "age": 22,
-      "course": "HTML New"
+      "gender": "female",
+      "course": "Github",
+      "id": "1"
     },
     {
       "id": "2",
@@ -165,12 +165,28 @@
       "course": "Photoshop"
     },
     {
-      "id": "4",
       "name": "Touqa Mohmed",
       "email": "Touqa@gmail.com",
+      "age": 19,
       "gender": "female",
-      "age": 17,
+      "course": "Excel Course",
+      "id": "3"
+    },
+    {
+      "id": "da2b",
+      "name": "Yosra Gamal",
+      "email": "Yosra@gmail.com",
+      "age": 37,
+      "gender": "female",
       "course": "Excel Course"
+    },
+    {
+      "id": "b2a2",
+      "name": "Marawan Mahmoud Nasr",
+      "email": "saqr.marawan@yahoo.com",
+      "age": 23,
+      "gender": "male",
+      "course": "HTML New Level 2"
     }
   ]
 }
