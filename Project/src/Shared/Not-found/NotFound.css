@@ -1,0 +1,41 @@
+.not-found {
+  background-color: rgb(84, 105, 212);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.not-found .container {
+  max-width: 600px;
+  padding: 20px;
+}
+
+.not-found h1 {
+  font-size: 8rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.not-found p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.not-found a.back-home {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: white;
+  color: rgb(84, 105, 212);
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.not-found a.back-home:hover {
+  background-color: rgb(130, 150, 233);
+  color: white;
+}

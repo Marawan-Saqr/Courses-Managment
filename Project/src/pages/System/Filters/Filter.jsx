@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom';
 
-const Auth = () => {
+const Filter = () => {
   return (
     <div>
       <Outlet />
     </div>
   )
 }
-export default Auth;
+export default Filter;

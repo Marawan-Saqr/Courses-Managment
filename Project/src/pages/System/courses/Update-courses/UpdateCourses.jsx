@@ -1,16 +1,16 @@
-import React from "react";
-import './AddCourses.css';
+import { useEffect } from "react";
+import './UpdateCourses.css';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Form, Container, Row, Col } from "react-bootstrap";
-import Buttons from '../../../Shared/StyledComponents';
+import Buttons from '../../../../Shared/Styled-components/StyledComponents';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
-const AddCourse = () => {
+const UpdateCourses = () => {
 
   // Zod Scheme
   const schema = z.object({
@@ -36,32 +36,53 @@ const AddCourse = () => {
       .min(5, {message: "Tools must be at least 5 characters long" })
       .max(20, {message: "Tools must not exceed 20 characters" }),
   });
-  
 
 
   // React Hook Form Destruct & Zod Resolver
-  const { register, handleSubmit, formState: { errors }} = useForm({ mode: 'onTouched', resolver: zodResolver(schema)});
+  const { register, handleSubmit, setValue, formState: { errors }} = useForm({ mode: 'onTouched', resolver: zodResolver(schema)});
 
-  // Post Method
+  // Put Method
+  const { state } = useLocation();
   const navigate = useNavigate();
-  const createCourse = handleSubmit(async (data) => {
-    await axios.post("http://localhost:3001/courses", data).then(
+  const updateCourse = handleSubmit(async (data) => {
+    try {
+      await axios.put(`http://localhost:3001/courses/${state.id}`, data);
       Swal.fire({
         title: "DONE!",
-        text: "Your Course Has Been Added!",
+        text: "Your Course Has Been Updated!",
         icon: "success"
-      }),
-      navigate("/system")
-    )
+      }).then(() => {
+        navigate("/system");
+      });
+    } catch (error) {
+      console.error("Error updating course:", error);
+      Swal.fire({
+        title: "Error!",
+        text: "There was an issue updating the course.",
+        icon: "error"
+      });
+    }
   });
 
+  useEffect(() => {
+    if (state) {
+      setValue("name", state.name);
+      setValue("type", state.type);
+      setValue("instructor", state.instructor);
+      setValue("hours", state.hours);
+      setValue("difficulty", state.difficulty);
+      setValue("tools", state.tools);
+    }
+  }, [state])
+
+
   return (
-    <section className="add-courses mb-5">
+    <section className="update-courses mb-5">
       <Container className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
         <Row className="w-100">
           <Col xs={12} md={8} lg={12} className="mx-auto">
-            <h2 className="text-center mb-4">Add <Buttons.PrimarySpan>Courses</Buttons.PrimarySpan></h2>
-            <Form onSubmit={handleSubmit(createCourse)}>
+            <h2 className="text-center mb-4">UPDATE <Buttons.PrimarySpan>COURSES</Buttons.PrimarySpan></h2>
+            <Form onSubmit={handleSubmit(updateCourse)}>
 
 
               {/* Course Name */}
@@ -111,11 +132,11 @@ const AddCourse = () => {
               {/* Difficulty */}
               <Form.Group controlId="formDifficulty" className="mt-4 mb-4">
                 <Form.Label>Difficulty</Form.Label>
-                <Form.Control as="select" {...register('Difficulty')} className={errors.difficulty ? "border border-danger" : null}>
+                <Form.Control as="select" {...register('difficulty')} className={errors.difficulty ? "border border-danger" : null}>
                   <option value="">Select Difficulty</option>
-                  <option>Easy</option>
-                  <option>Normal</option>
-                  <option>Hard</option>
+                  <option value="Easy">Easy</option>
+                  <option value="Normal">Normal</option>
+                  <option value="Hard">Hard</option>
                 </Form.Control>
                   {errors.difficulty && (<Form.Text className="text-danger">
                   {errors.difficulty.message}
@@ -134,7 +155,7 @@ const AddCourse = () => {
                 )}
               </Form.Group>
 
-              <Buttons.UpdateButton type="submit" className="w-100">Create Course</Buttons.UpdateButton>
+              <Buttons.UpdateButton type="submit" className="w-100">Update Course</Buttons.UpdateButton>
             </Form>
           </Col>
         </Row>
@@ -143,4 +164,4 @@ const AddCourse = () => {
   );
 };
 
-export default AddCourse;
+export default UpdateCourses;

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-// Define a styled component for a button
 const DeleteButton = styled.button`
   border: none;
   padding: 5px 8px;
@@ -42,7 +41,7 @@ const DetailsButton = styled.button`
 
 const PrimarySpan = styled.span`
   color: rgb(84, 105, 212);
-`
+`;
 
 const Buttons = { DeleteButton, UpdateButton, DetailsButton, PrimarySpan };
 export default Buttons;

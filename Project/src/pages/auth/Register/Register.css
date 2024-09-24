@@ -1,4 +1,4 @@
-.login-root {
+.register-root {
   background: #fff;
   display: flex;
   width: 100%;
@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.loginbackground {
+.registerbackground {
   min-height: 692px;
   position: fixed;
   bottom: 0;
@@ -38,7 +38,7 @@
   flex-direction: column;
 }
 
-.loginbackground-gridContainer {
+.registerbackground-gridContainer {
   display: grid;
   grid-template-columns: [start] 1fr [left-gutter] repeat(16, 86.6px) [left-gutter] 1fr [end];
   grid-template-rows: [top] 1fr [top-gutter] repeat(8, 64px) [bottom-gutter] 1fr [bottom];
@@ -251,5 +251,4 @@ a.ssolink {
   100% {
     transform: translateX(0px);
   }
-
 }

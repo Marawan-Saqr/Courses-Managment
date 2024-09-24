@@ -1,11 +1,11 @@
 {
   "users": [
     {
-      "id": "1",
-      "email": "Marawansaqr5000@gmail.com",
       "name": "Marawan Saqr",
+      "email": "Marawansaqr5002@gmail.com",
       "age": 27,
-      "password": "Marawan5200"
+      "password": "Marawan5200",
+      "id": "1"
     },
     {
       "id": "2",
@@ -36,22 +36,29 @@
       "password": "12345"
     },
     {
-      "id": "6",
-      "email": "EssamHamdy@gmail.com",
-      "name": "Essam",
-      "age": 34,
-      "password": "34567"
+      "id": "44ad",
+      "name": "Ismail Mohmed",
+      "email": "ismail_Mohmed@yahoo.com",
+      "age": 44,
+      "password": "6437282"
+    },
+    {
+      "id": "50f7",
+      "name": "Safy Essam Mohmed",
+      "email": "safy@yahoo.com",
+      "age": 22,
+      "password": "1234567"
     }
   ],
   "courses": [
     {
-      "id": "1",
-      "name": "Html",
+      "name": "HTML New Level 2",
       "type": "Programming",
-      "instructor": "Osama Elzero",
-      "hours": 5,
+      "instructor": "Islam Kodzila",
+      "hours": 8,
       "difficulty": "Easy",
-      "tools": "VS Code"
+      "tools": "Brackets",
+      "id": "1"
     },
     {
       "id": "2",
@@ -90,7 +97,7 @@
       "tools": "VS Code"
     },
     {
-      "id": "9f33",
+      "id": "6",
       "name": "Github",
       "type": "Programming",
       "instructor": "Mohmed Elhossiny",
@@ -99,42 +106,87 @@
       "tools": "VS Code"
     },
     {
-      "id": "c1c9",
-      "name": "Adobe After Effect",
-      "type": "Design",
-      "instructor": "Mohmed Elhossiny",
-      "hours": 40,
-      "difficulty": "Hard",
-      "tools": "Adobe AfterEffect"
-    },
-    {
-      "id": "6c19",
-      "name": "Javascript",
+      "id": "658c",
+      "name": "Sass Course",
       "type": "Programming",
-      "instructor": "Samira Saad",
-      "hours": 29,
-      "difficulty": "Hard",
+      "instructor": "Smaira Saad",
+      "hours": 40,
+      "difficulty": "Normal",
       "tools": "VS Code"
     },
     {
-      "id": "a5d2",
-      "name": "Programming With C++",
-      "type": "Programming",
-      "iInstructor": "Mina Wageh",
+      "id": "a7d0",
+      "name": "Excel Course",
+      "type": "Accountaing",
+      "instructor": "Mohmed Yasser",
+      "hours": 19,
+      "difficulty": "Easy",
+      "tools": "Microsoft Office"
+    },
+    {
+      "id": "3748",
+      "name": "Davinci Resolve",
+      "type": "Design",
+      "instructor": "Mohmed Yasser",
       "hours": 40,
-      "difficulty": "Hard",
-      "tools": "Code Blocks"
+      "difficulty": "Normal",
+      "tools": "Davinci Resolve"
     }
   ],
-  "difficulty": [
-    { 
-      "level": "Easy Courses"
+  "diff": [
+    {
+      "id": "1",
+      "level": "easy"
     },
-    { 
-      "level": "Normal Courses"
+    {
+      "id": "2",
+      "level": "normal"
     },
-    { 
-      "level": "Hard Courses" 
+    {
+      "id": "3",
+      "level": "hard"
+    }
+  ],
+  "students": [
+    {
+      "name": "Haidy Essam",
+      "email": "haidy@gmail.com",
+      "age": 22,
+      "gender": "female",
+      "course": "Github",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Mahmoud Ahmed",
+      "email": "mah_ahmed@gmail.com",
+      "gender": "male",
+      "age": 27,
+      "course": "Photoshop"
+    },
+    {
+      "name": "Touqa Mohmed",
+      "email": "Touqa@gmail.com",
+      "age": 19,
+      "gender": "female",
+      "course": "Excel Course",
+      "id": "3"
+    },
+    {
+      "id": "da2b",
+      "name": "Yosra Gamal",
+      "email": "Yosra@gmail.com",
+      "age": 37,
+      "gender": "female",
+      "course": "Excel Course"
+    },
+    {
+      "id": "b2a2",
+      "name": "Marawan Mahmoud Nasr",
+      "email": "saqr.marawan@yahoo.com",
+      "age": 23,
+      "gender": "male",
+      "course": "HTML New Level 2"
     }
   ]
 }
