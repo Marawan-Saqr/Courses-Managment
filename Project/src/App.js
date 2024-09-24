@@ -5,17 +5,14 @@ import Login from "./pages/auth/Login/Login";
 import Register from "./pages/auth/Register/Register";
 import System from "./pages/System/System";
 import AllCourses from "./pages/System/courses/AllCourses";
-import AddCourses from "./pages/System/courses/Add-courses/AddCourses";
-import FilterDifficulty from "./pages/System/Filters/Filter-difficulty/FilterDifficulty";
 import TableData from "./pages/System/courses/Table-Data/TableData";
-import GetByLevel from "./pages/System/Filters/Filter-difficulty/Get-by-level/GetByLevel";
-import NotFound from './Shared/Not-found/NotFound';
 import CourseDetails from './pages/System/courses/Course-details/CourseDetails';
 import UpdateCourses from './pages/System/courses/Update-courses/UpdateCourses';
+import AddCourses from "./pages/System/courses/Add-courses/AddCourses";
 import Users from './pages/System/Users/Users';
+import TableDataUsers from './pages/System/Users/Table-data-users/TableDataUsers';
 import UserDetails from './pages/System/Users/User-details/UserDetails';
 import UpdateUser from './pages/System/Users/Update-user/UpdateUser';
-import TableDataUsers from './pages/System/Users/Table-data-users/TableDataUsers';
 import CreateUser from './pages/System/Users/Create-user/CreateUser';
 import Students from './pages/System/Students/Students';
 import TableDataStudents from './pages/System/Students/Table-data-students/TableDataStudents';
@@ -23,8 +20,12 @@ import StudentDetails from './pages/System/Students/Student-details/StudentDetai
 import UpdateStudent from './pages/System/Students/Update-student/UpdateStudent';
 import CreateStudent from './pages/System/Students/Create-student/CreateStudent';
 import Filter from './pages/System/Filters/Filter';
+import FilterDifficulty from "./pages/System/Filters/Filter-difficulty/FilterDifficulty";
+import GetByLevel from "./pages/System/Filters/Filter-difficulty/Get-by-level/GetByLevel";
 import EnrolledStudents from "./pages/System/Filters/Enrolled-students/EnrolledStudents";
 import GetByCourse from './pages/System/Filters/Enrolled-students/Get-by-course/GetByCourse';
+import NotFound from './Shared/Not-found/NotFound';
+
 
 function App() {
   return (

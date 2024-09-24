@@ -1,4 +1,0 @@
-1-query param.
-2-Code Edit.
-2-Media Query.
-3-Readme.

@@ -2,73 +2,114 @@ import "./Register.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Form from "react-bootstrap/Form";
-import axios from 'axios';
-import { useState } from 'react';
+import axios from "axios";
+import { useState } from "react";
 
 const Register = () => {
-
   // Component States
   const navigate = useNavigate();
-  const { register, handleSubmit, formState: { errors } } = useForm({ mode: "onTouched" });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ mode: "onTouched" });
   const [existingEmailError, setExistingEmailError] = useState("");
 
   // Register Function
   const registerSubmit = handleSubmit(async (data) => {
     const response = await axios.get("http://localhost:3001/users");
-    const existingUser = response.data.find(user => user.email === data.email);
+    const existingUser = response.data.find(
+      (user) => user.email === data.email
+    );
     if (existingUser) {
       setExistingEmailError("Email already exists");
     } else {
       setExistingEmailError("");
-      await axios.post("http://localhost:3001/users", data).then(() => navigate("/login"));
+      await axios
+        .post("http://localhost:3001/users", data)
+        .then(() => navigate("/login"));
     }
   });
-
-
 
   return (
     <section className="register">
       <div className="container">
         <div className="register-root">
-
-
           {/* Animated Background */}
-          <div className="box-root flex-flex flex-direction--column" style={{ minHeight: "100vh", flexGrow: 1 }}>
-            <div className="loginbackground box-background--white padding-top--64">
-              <div className="loginbackground-gridContainer">
-                <div className="box-root flex-flex" style={{ gridArea: "top / start / 8 / end" }}>
-                  <div className="box-root" style={{ backgroundImage: "linear-gradient(white 0%, rgb(247, 250, 252) 33%)", flexGrow: 1 }}></div>
+          <div
+            className="box-root flex-flex flex-direction--column"
+            style={{ minHeight: "100vh", flexGrow: 1 }}
+          >
+            <div className="registerbackground box-background--white padding-top--64">
+              <div className="registerbackground-gridContainer">
+                <div
+                  className="box-root flex-flex"
+                  style={{ gridArea: "top / start / 8 / end" }}
+                >
+                  <div
+                    className="box-root"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(white 0%, rgb(247, 250, 252) 33%)",
+                      flexGrow: 1,
+                    }}
+                  ></div>
                 </div>
-                <div className="box-root flex-flex" style={{ gridArea: "4 / 2 / auto / 5" }}>
-                  <div className="box-root box-divider--light-all-2 animationLeftRight tans3s" style={{ flexGrow: 1 }}></div>
+                <div
+                  className="box-root flex-flex"
+                  style={{ gridArea: "4 / 2 / auto / 5" }}
+                >
+                  <div
+                    className="box-root box-divider--light-all-2 animationLeftRight tans3s"
+                    style={{ flexGrow: 1 }}
+                  ></div>
                 </div>
-                <div className="box-root flex-flex" style={{ gridArea: "6 / start / auto / 2" }}>
-                  <div className="box-root box-background--blue800" style={{ flexGrow: 1 }}></div>
+                <div
+                  className="box-root flex-flex"
+                  style={{ gridArea: "6 / start / auto / 2" }}
+                >
+                  <div
+                    className="box-root box-background--blue800"
+                    style={{ flexGrow: 1 }}
+                  ></div>
                 </div>
               </div>
             </div>
 
-
             {/* Project Title */}
-            <div className="box-root padding-top--24 flex-flex flex-direction--column" style={{ flexGrow: 1, zIndex: 9 }}>
-              <div className="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center" style={{ marginTop: "30px" }}>
-                <h3><Link to={"/"} style={{ textDecoration: "none" }}>Welcome To Courses Management</Link></h3>
+            <div
+              className="box-root padding-top--24 flex-flex flex-direction--column"
+              style={{ flexGrow: 1, zIndex: 9 }}
+            >
+              <div
+                className="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center"
+                style={{ marginTop: "30px" }}
+              >
+                <h3>
+                  <Link to={"/"} style={{ textDecoration: "none" }}>
+                    Welcome To Courses Management
+                  </Link>
+                </h3>
               </div>
               <div className="formbg-outer">
                 <div className="formbg">
                   <div className="formbg-inner padding-horizontal--48">
                     {/* Register Title */}
-                    <span className="padding-bottom--15">Register New Account</span>
+                    <span className="padding-bottom--15">
+                      Register New Account
+                    </span>
                     <form onSubmit={registerSubmit}>
-
-
                       {/* Email */}
                       <div className="field padding-bottom--24">
                         <label htmlFor="email">Email</label>
                         <input
                           type="email"
                           placeholder="Enter Your Email"
-                          className={errors.email?.message || existingEmailError ? "border border-danger" : null}
+                          className={
+                            errors.email?.message || existingEmailError
+                              ? "border border-danger"
+                              : null
+                          }
                           {...register("email", {
                             required: "Email Is Required!",
                             pattern: {
@@ -77,85 +118,129 @@ const Register = () => {
                             },
                           })}
                         />
-                        <div >
+                        <div>
                           {errors.email?.message && (
-                            <Form.Text className="text-danger">{errors.email?.message}</Form.Text>
+                            <Form.Text className="text-danger">
+                              {errors.email?.message}
+                            </Form.Text>
                           )}
                         </div>
                       </div>
 
-
                       {/* Name */}
-                      <div className="field padding-bottom--24" style={{ marginTop: "20px" }}>
+                      <div
+                        className="field padding-bottom--24"
+                        style={{ marginTop: "20px" }}
+                      >
                         <label htmlFor="name">Name</label>
                         <input
                           type="text"
                           placeholder="Enter Your Name"
-                          className={errors.name?.message ? "border border-danger" : null}
+                          className={
+                            errors.name?.message ? "border border-danger" : null
+                          }
                           {...register("name", {
                             required: "Name Is Required!",
-                            minLength: { value: 3, message: "Name Should Be More Than 2 Characters" },
-                            maxLength: { value: 60, message: "Name Should Be Equal Or Less Than 60 Characters" }
+                            minLength: {
+                              value: 3,
+                              message: "Name Should Be More Than 2 Characters",
+                            },
+                            maxLength: {
+                              value: 60,
+                              message:
+                                "Name Should Be Equal Or Less Than 60 Characters",
+                            },
                           })}
                         />
                       </div>
-                      <div style={{marginTop: '-9px'}}>
+                      <div style={{ marginTop: "-9px" }}>
                         {errors.name?.message && (
-                          <Form.Text className="text-danger">{errors.name?.message}</Form.Text>
+                          <Form.Text className="text-danger">
+                            {errors.name?.message}
+                          </Form.Text>
                         )}
                       </div>
 
-
                       {/* Age */}
-                      <div className="field padding-bottom--24" style={{ marginTop: "20px" }}>
+                      <div
+                        className="field padding-bottom--24"
+                        style={{ marginTop: "20px" }}
+                      >
                         <label htmlFor="age">Age</label>
                         <input
                           type="number"
                           placeholder="Enter Your Age"
-                          className={errors.age?.message ? "border border-danger" : null}
+                          className={
+                            errors.age?.message ? "border border-danger" : null
+                          }
                           {...register("age", {
                             required: "Age Is Required",
-                            min: { value: 18, message: "Age Must Be 18 Or Higher" },
+                            min: {
+                              value: 18,
+                              message: "Age Must Be 18 Or Higher",
+                            },
                           })}
                         />
                       </div>
-                      <div style={{marginTop: '-9px'}}>
+                      <div style={{ marginTop: "-9px" }}>
                         {errors.age?.message && (
-                          <Form.Text className="text-danger">{errors.age?.message}</Form.Text>
+                          <Form.Text className="text-danger">
+                            {errors.age?.message}
+                          </Form.Text>
                         )}
                       </div>
 
-
                       {/* Password */}
-                      <div className="field padding-bottom--24" style={{ marginTop: "20px" }}>
+                      <div
+                        className="field padding-bottom--24"
+                        style={{ marginTop: "20px" }}
+                      >
                         <label htmlFor="password">Password</label>
                         <input
                           type="password"
                           placeholder="Enter Your Password"
-                          className={errors.password?.message ? "border border-danger" : null}
+                          className={
+                            errors.password?.message
+                              ? "border border-danger"
+                              : null
+                          }
                           {...register("password", {
                             required: "Password Is Required",
-                            minLength: { value: 5, message: "Password Should Be More Than 5 Characters" },
-                            maxLength: { value: 20, message: "Password Should Be Equal Or Less Than 20 Characters" },
+                            minLength: {
+                              value: 5,
+                              message:
+                                "Password Should Be More Than 5 Characters",
+                            },
+                            maxLength: {
+                              value: 20,
+                              message:
+                                "Password Should Be Equal Or Less Than 20 Characters",
+                            },
                           })}
                         />
                       </div>
-                      <div style={{marginTop: '-9px'}}>
+                      <div style={{ marginTop: "-9px" }}>
                         {errors.password?.message && (
-                          <Form.Text className="text-danger">{errors.password?.message}</Form.Text>
+                          <Form.Text className="text-danger">
+                            {errors.password?.message}
+                          </Form.Text>
                         )}
                       </div>
 
-
                       {/* Submit */}
-                      <div className="field padding-bottom--24" style={{ marginTop: "20px" }}>
+                      <div
+                        className="field padding-bottom--24"
+                        style={{ marginTop: "20px" }}
+                      >
                         <input type="submit" value="REGISTER" />
                       </div>
 
-
                       {/* login */}
                       <div className="footer-link padding-top--24">
-                        <span>Already have an account? <Link to={"/login"}>Login</Link></span>
+                        <span>
+                          Already have an account?{" "}
+                          <Link to={"/login"}>Login</Link>
+                        </span>
                       </div>
                     </form>
                   </div>

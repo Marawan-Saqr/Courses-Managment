@@ -1,29 +1,66 @@
+/* General table styles */
 .schedule-table {
-    width: 100%;
-    border-collapse: collapse;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.schedule-table th, .schedule-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+.schedule-table th,
+.schedule-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
 .schedule-table th {
-    background-color: #5469d4;
-    color: white;
-    font-weight: bold;
+  background-color: #5469d4;
+  color: white;
+  font-weight: bold;
 }
 
 .schedule-table tr:nth-child(even) {
-    background-color: #f3f4ff;
+  background-color: #f3f4ff;
 }
 
 .schedule-table tr:hover {
-    background-color: #e8e8e8;
+  background-color: #e8e8e8;
 }
 
 .schedule-table td {
-    color: #555;
+  color: #555;
+}
+
+/* Make table responsive */
+.table-container {
+  overflow-x: auto; /* Allows horizontal scrolling */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .schedule-table th,
+  .schedule-table td {
+    padding: 8px; /* Reduce padding for small screens */
+    font-size: 14px; /* Adjust font size */
+  }
+
+  .schedule-table th {
+    font-size: 16px; /* Slightly larger for headings */
+  }
+}
+
+/* Media query for very small screens (mobile) */
+@media (max-width: 480px) {
+  .schedule-table th,
+  .schedule-table td {
+    padding: 6px; /* Further reduce padding for smaller devices */
+    font-size: 12px;
+  }
+
+  .schedule-table th {
+    font-size: 14px;
+  }
+
+  .schedule-table td {
+    white-space: nowrap; /* Prevent text wrapping */
+  }
 }

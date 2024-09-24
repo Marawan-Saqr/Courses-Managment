@@ -1,5 +1,5 @@
-import {Outlet} from 'react-router-dom';
-import Topbar from './Topbar/Topbar';
+import { Outlet } from "react-router-dom";
+import Topbar from "./Topbar/Topbar";
 
 const System = () => {
   return (
@@ -7,6 +7,6 @@ const System = () => {
       <Topbar />
       <Outlet />
     </div>
-  )
-}
+  );
+};
 export default System;
