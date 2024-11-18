@@ -12,7 +12,7 @@ const UserDetails = () => {
   // Get User Details
   const getCourseDetails = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/users/${params.USERID}`);
+      const response = await axios.get(`https://veil-flicker-piano.glitch.me/users/${params.USERID}`);
       setUser(response.data);
     } catch (error) {
       console.error("Error fetching user details:", error);
