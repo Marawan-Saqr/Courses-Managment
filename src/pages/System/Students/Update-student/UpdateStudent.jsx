@@ -30,7 +30,7 @@ const UpdateStudent = () => {
   const navigate = useNavigate();
   const updateUser = handleSubmit(async (data) => {
     try {
-      await axios.put(`http://localhost:3001/students/${state.id}`, data);
+      await axios.put(`https://veil-flicker-piano.glitch.me/students/${state.id}`, data);
       Swal.fire({ title: "DONE!", text: "Student has been updated!", icon: "success" }).then(() => {
         navigate("/system/students");
       });
@@ -44,7 +44,7 @@ const UpdateStudent = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/courses');
+        const response = await axios.get('https://veil-flicker-piano.glitch.me/courses');
         setCourses(response.data);
       } catch (error) {
         console.error("Error fetching courses:", error);
