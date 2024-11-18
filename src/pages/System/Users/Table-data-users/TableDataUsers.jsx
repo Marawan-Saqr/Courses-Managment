@@ -37,7 +37,7 @@ const TableDataUsers = () => {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3001/users/${id}`);
+        await axios.delete(`https://veil-flicker-piano.glitch.me/users/${id}`);
         setUsers(users.filter((user) => user.id !== id));
         Swal.fire("Deleted!", "The user has been deleted.", "success");
       } catch (error) {
