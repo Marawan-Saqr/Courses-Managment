@@ -13,7 +13,7 @@ const GetByLevel = () => {
 
   const fetchCourses = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/courses?level=${level}`);
+      const response = await axios.get(`https://veil-flicker-piano.glitch.me/courses?level=${level}`);
       setCourses(
         response.data.filter(
           (course) => course.difficulty.toLowerCase() === level.toLowerCase()
