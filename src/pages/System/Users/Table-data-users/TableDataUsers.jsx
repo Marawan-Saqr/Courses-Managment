@@ -15,7 +15,7 @@ const TableDataUsers = () => {
   const getAllUsers = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:3001/users");
+      const response = await axios.get("https://veil-flicker-piano.glitch.me/users");
       setUsers(response.data);
     } catch (error) {
       console.error("Error fetching users:", error);
