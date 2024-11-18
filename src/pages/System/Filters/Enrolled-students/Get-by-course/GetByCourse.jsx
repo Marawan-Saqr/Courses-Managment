@@ -16,7 +16,7 @@ const GetByCourse = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `https://veil-flicker-piano.glitch.me/courses=${name}`
+        `https://veil-flicker-piano.glitch.me/students?course=${name}`
       );
       setStudents(response.data);
     } catch (error) {
