@@ -48,6 +48,13 @@
       "email": "safy@yahoo.com",
       "age": 22,
       "password": "1234567"
+    },
+    {
+      "id": "91a2",
+      "email": "Osama@gmail.com",
+      "name": "Osama",
+      "age": "30",
+      "password": "12345"
     }
   ],
   "courses": [
@@ -88,22 +95,22 @@
       "tools": "VS Code"
     },
     {
-      "id": "5",
-      "name": "React",
+      "name": "React Js",
       "type": "Programming",
       "instructor": "Ahmed Hamaza",
       "hours": 40,
       "difficulty": "Normal",
-      "tools": "VS Code"
+      "tools": "VS Code",
+      "id": "5"
     },
     {
-      "id": "6",
-      "name": "Github",
+      "name": "Github New",
       "type": "Programming",
       "instructor": "Mohmed Elhossiny",
       "hours": 50,
       "difficulty": "Easy",
-      "tools": "VS Code"
+      "tools": "VS Code",
+      "id": "6"
     },
     {
       "id": "658c",
@@ -122,15 +129,6 @@
       "hours": 19,
       "difficulty": "Easy",
       "tools": "Microsoft Office"
-    },
-    {
-      "id": "3748",
-      "name": "Davinci Resolve",
-      "type": "Design",
-      "instructor": "Mohmed Yasser",
-      "hours": 40,
-      "difficulty": "Normal",
-      "tools": "Davinci Resolve"
     }
   ],
   "diff": [
@@ -153,7 +151,7 @@
       "email": "haidy@gmail.com",
       "age": 22,
       "gender": "female",
-      "course": "Github",
+      "course": "Github New",
       "id": "1"
     },
     {
