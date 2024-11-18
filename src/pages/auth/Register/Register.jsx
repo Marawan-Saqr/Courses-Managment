@@ -17,7 +17,7 @@ const Register = () => {
 
   // Register Function
   const registerSubmit = handleSubmit(async (data) => {
-    const response = await axios.get("http://localhost:3001/users");
+    const response = await axios.get("https://veil-flicker-piano.glitch.me/users");
     const existingUser = response.data.find(
       (user) => user.email === data.email
     );
@@ -26,7 +26,7 @@ const Register = () => {
     } else {
       setExistingEmailError("");
       await axios
-        .post("http://localhost:3001/users", data)
+        .post("https://veil-flicker-piano.glitch.me/users", data)
         .then(() => navigate("/login"));
     }
   });
