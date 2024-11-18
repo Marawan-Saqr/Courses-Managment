@@ -44,7 +44,7 @@ const UpdateUser = () => {
   const navigate = useNavigate();
   const updateUser = handleSubmit(async (data) => {
     try {
-      await axios.put(`http://localhost:3001/users/${state.id}`, data);
+      await axios.put(`https://veil-flicker-piano.glitch.me/users/${state.id}`, data);
       Swal.fire({
         title: "DONE!",
         text: "User has been updated!",
