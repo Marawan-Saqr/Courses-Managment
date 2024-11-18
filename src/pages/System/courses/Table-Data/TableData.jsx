@@ -17,7 +17,7 @@ const TableData = () => {
   const getAllCourses = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:3001/courses");
+      const response = await axios.get("https://veil-flicker-piano.glitch.me/courses");
       setCourses(response.data);
     } catch (error) {
       console.error("Error fetching courses:", error);
@@ -39,7 +39,7 @@ const TableData = () => {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3001/courses/${id}`);
+        await axios.delete(`https://veil-flicker-piano.glitch.me/courses/${id}`);
         setCourses(courses.filter((course) => course.id !== id));
         Swal.fire("Deleted!", "The course has been deleted.", "success");
       } catch (error) {
