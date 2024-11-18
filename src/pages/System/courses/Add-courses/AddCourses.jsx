@@ -45,7 +45,7 @@ const AddCourse = () => {
   // Post Method
   const navigate = useNavigate();
   const createCourse = handleSubmit(async (data) => {
-    await axios.post("http://localhost:3001/courses", data).then(
+    await axios.post("https://veil-flicker-piano.glitch.me/courses", data).then(
       Swal.fire({
         title: "DONE!",
         text: "Your Course Has Been Added!",
