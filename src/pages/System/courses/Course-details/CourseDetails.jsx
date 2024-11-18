@@ -14,7 +14,7 @@ const CourseDetails = () => {
   // Get Course Details
   const getCourseDetails = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/courses/${params.COURSEID}`);
+      const response = await axios.get(`https://veil-flicker-piano.glitch.me/courses/${params.COURSEID}`);
       setCourse(response.data);
     } catch (error) {
       console.error("Error fetching course details:", error);
