@@ -46,7 +46,7 @@ const UpdateCourses = () => {
   const navigate = useNavigate();
   const updateCourse = handleSubmit(async (data) => {
     try {
-      await axios.put(`http://localhost:3001/courses/${state.id}`, data);
+      await axios.put(`https://veil-flicker-piano.glitch.me/courses/${state.id}`, data);
       Swal.fire({
         title: "DONE!",
         text: "Your Course Has Been Updated!",
