@@ -9,7 +9,7 @@ const FilterDifficulty = () => {
   // Get All Difficulties
   const [diffcultys, setDiffcultys] = useState([]);
   const getAllDifficulties = async () => {
-    await axios.get("http://localhost:3001/diff").then((response) => setDiffcultys(response.data));
+    await axios.get("https://veil-flicker-piano.glitch.me/diff").then((response) => setDiffcultys(response.data));
   }
 
   useEffect(() => {
