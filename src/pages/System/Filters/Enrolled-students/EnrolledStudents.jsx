@@ -9,7 +9,7 @@ const EnrolledStudents = () => {
   // Get All Difficulties
   const [courseNames, setCourseNames] = useState([]);
   const getAllCoursesNames = async () => {
-    await axios.get("http://localhost:3001/courses").then((response) => setCourseNames(response.data));
+    await axios.get("https://veil-flicker-piano.glitch.me/courses").then((response) => setCourseNames(response.data));
   }
 
   useEffect(() => {
