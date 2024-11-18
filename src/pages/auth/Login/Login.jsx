@@ -19,7 +19,7 @@ const Login = () => {
   // Get All Users Function Before Login
   const getAllUsers = async () => {
     await axios
-      .get("http://localhost:3001/users")
+      .get("https://veil-flicker-piano.glitch.me/users")
       .then((response) => setUsers(response.data));
   };
 
