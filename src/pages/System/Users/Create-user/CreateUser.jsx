@@ -41,7 +41,7 @@ const CreateUser = () => {
   const navigate = useNavigate();
   const updateUser = handleSubmit(async (data) => {
     try {
-      await axios.post(`http://localhost:3001/users`, data);
+      await axios.post(`https://veil-flicker-piano.glitch.me/users`, data);
       Swal.fire({
         title: "DONE!",
         text: "User has been Created!",
